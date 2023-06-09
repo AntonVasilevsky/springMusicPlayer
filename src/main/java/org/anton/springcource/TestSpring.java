@@ -6,9 +6,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class TestSpring {
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         MusicPlayer mp = context.getBean(MusicPlayer.class);
         mp.playMusic();
+        context.close();
+
+
 
     }
 }
